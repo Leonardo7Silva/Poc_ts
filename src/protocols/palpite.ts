@@ -1,8 +1,8 @@
  export type PalpiteType = {
     id?: number,
     nome: string,
-    mandante: number,
-    visitante:number,
+    placarMandante: number,
+    placarVisitante:number,
     marcadores?: string,
     jogoId: number
 }

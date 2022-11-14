@@ -24,8 +24,8 @@ async function insertPalpite(body:PalpiteType): Promise<QueryResult>{
         VALUES($1, $2, $3, $4, $5)
     `, [body.nome, 
         body.jogoId, 
-        body.mandante, 
-        body.visitante, 
+        body.placarMandante, 
+        body.placarVisitante, 
         body.marcadores
     ])
 };
@@ -46,8 +46,8 @@ async function atualizarPalpite(body:PalpiteType, id:number): Promise<QueryResul
     marcadores = $3 
     WHERE id = $4
     `,[
-        body.mandante,
-        body.visitante,
+        body.placarMandante,
+        body.placarVisitante,
         body.marcadores,
         id
     ])    

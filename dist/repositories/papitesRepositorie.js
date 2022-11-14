@@ -55,8 +55,8 @@ function insertPalpite(body) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, connection.query("\n    INSERT INTO \"palpites\"(\n        \"name\",\n        \"jogoId\", \n        \"placarMandante\", \n        \"placarVisitante\", \n        marcadores) \n        VALUES($1, $2, $3, $4, $5)\n    ", [body.nome,
                         body.jogoId,
-                        body.mandante,
-                        body.visitante,
+                        body.placarMandante,
+                        body.placarVisitante,
                         body.marcadores
                     ])];
                 case 1: return [2 /*return*/, _a.sent()];
@@ -81,8 +81,8 @@ function atualizarPalpite(body, id) {
         return __generator(this, function (_a) {
             switch (_a.label) {
                 case 0: return [4 /*yield*/, connection.query("\n    UPDATE palpites \n    SET \n    \"placarMandante\" = $1, \n    \"placarVisitante\" = $2, \n    marcadores = $3 \n    WHERE id = $4\n    ", [
-                        body.mandante,
-                        body.visitante,
+                        body.placarMandante,
+                        body.placarVisitante,
                         body.marcadores,
                         id
                     ])];
